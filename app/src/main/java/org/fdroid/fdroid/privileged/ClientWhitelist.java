@@ -30,9 +30,13 @@ import java.util.HashSet;
  */
 public class ClientWhitelist {
 
+    //keytool -list -v -keystore keystore.jks -alias key0 -storepass password -keypass password | grep 'SHA256:' | tr -d ':' | cut -d' ' -f 3
     public static HashSet<Pair<String, String>> whitelist = new HashSet<>(Arrays.asList(
             // certificate SHA-256 of https//f-droid.org/FDroid.apk
-            new Pair<>("org.fdroid.fdroid", "43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab")
+            new Pair<>("org.fdroid.fdroid", "43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab"),
+            new Pair<>("org.fdroid.fdroid", "19febe0ed4b9d8fcc91271c7182fb9e510ef57749f56b07e1ee1c1bdafc5a2ab"), // key used to build Fdroid :: Hernand
+            new Pair<>("org.fdroid.fdroid", "275e76d61df2d2237e985b4aaf30d691de90bd2fa25e404728a9b87393a13e3c") // key used to build Fdroid :: Hernand emile using froid keystore
+
     ));
 
 }
